@@ -1,23 +1,8 @@
-const query = `
-query ($id: Int) { # Define which variables will be used in the query (id)
-  Media (id: $id, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
-    id
-    title {
-      romaji
-      english
-      native
-    }
-  }
-}
-`;
-
-// Define query variables and values that will be used in the query request
-const variables = {
-    id: 11061
-};
+import { API_ENDPOINT } from './consts.js';
+import { QUERY_ANIME, QUERY_USER_ANIME } from './queries.js';
+import { ANIME_IDS, USER_IDS } from './variables.js';
 
 // Define config for API request
-const url = 'https://graphql.anilist.co';
 const options = {
     method: 'POST',
     headers: {
@@ -25,14 +10,14 @@ const options = {
         'Accept': 'application/json',
     },
     body: JSON.stringify({
-        query: query,
-        variables: variables
+        query: QUERY_ANIME,
+        variables: ANIME_IDS
     })
 };
 
 async function makeRequest() {
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(API_ENDPOINT, options);
         const data = await handleResponse(response);
         handleData(data);
     } catch (error) {
