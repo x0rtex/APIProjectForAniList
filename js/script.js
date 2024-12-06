@@ -1,23 +1,9 @@
-import { API_ENDPOINT } from './consts.js';
-import { QUERY_ANIME, QUERY_USER_ANIME } from './queries.js';
-import { ANIME_IDS, USER_IDS } from './variables.js';
+import { API_ENDPOINT, OPTIONS } from './consts.js';
 
-// Define config for API request
-const options = {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-    },
-    body: JSON.stringify({
-        query: QUERY_ANIME,
-        variables: ANIME_IDS
-    })
-};
-
+// Make the HTTP API request
 async function makeRequest() {
     try {
-        const response = await fetch(API_ENDPOINT, options);
+        const response = await fetch(API_ENDPOINT, OPTIONS);
         const data = await handleResponse(response);
         handleData(data);
     } catch (error) {
@@ -25,16 +11,19 @@ async function makeRequest() {
     }
 }
 
+// Return response as JSON
 function handleResponse(response) {
     return response.json().then(function (json) {
         return response.ok ? json : Promise.reject(json);
     });
 }
 
+// Log the response to console
 function handleData(data) {
     console.log(data);
 }
 
+// Log the error to console
 function handleError(error) {
     alert('Error, check console');
     console.error(error);
