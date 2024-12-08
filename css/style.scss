@@ -1,4 +1,72 @@
-h1 {
-  font-family: Arial, sans-serif;
-  color: #333;
+$page-color: #1d1b27;
+$text-color: #e6e6ff;
+$error-color: red;
+$text-shadow-color: rgba(0, 0, 0, 0.5);
+$box-shadow-color: rgba(0, 0, 0, 0.2);
+
+* {
+  background-color: $page-color;
+  color: $text-color;
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border-bottom: 2px solid $text-color;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px $box-shadow-color;
+}
+
+#title {
+  margin: 1rem;
+  display: inline-block;
+  text-shadow: 2px 2px 4px $text-shadow-color;
+}
+
+// Search button styles
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input {
+  background-color: $text-color;
+  color: $page-color;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: $text-color;
+  color: $page-color;
+  padding: 5px 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.errorMessage {
+  color: $error-color;
+  font-weight: bold;
+}
+
+// User and list styles
+
+.userName {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 10px;
+  display: inline-block;
+  border: 2px solid $text-color;
+  border-radius: 10px;
 }
