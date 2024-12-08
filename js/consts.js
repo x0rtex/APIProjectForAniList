@@ -2,14 +2,17 @@
 export const API_ENDPOINT = 'https://graphql.anilist.co';
 
 // Define user IDs to query
-const USER_IDS = {
+export const USER_IDS = {
     userId: 7056318
 };
 
 // Define GraphQL query
-const QUERY_USER = `
+export const QUERY_USER = `
 query ($userId: Int!) {
   MediaListCollection(type: ANIME, userId: $userId) {
+    user {
+      name
+    } 
     lists {
       name
       entries {
