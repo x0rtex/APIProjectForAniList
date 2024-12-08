@@ -1,11 +1,11 @@
-import { API_ENDPOINT, OPTIONS } from './consts.js';
+import { displayData } from "./displayData.js";
 
 // Make the HTTP API request
-export async function makeRequest() {
+export async function makeRequest(api, options) {
     try {
-        const response = await fetch(API_ENDPOINT, OPTIONS);
+        const response = await fetch(api, options);
         const data = await handleResponse(response);
-        handleData(data);
+        displayData(data);
     } catch (error) {
         handleError(error);
     }
@@ -18,13 +18,17 @@ function handleResponse(response) {
     });
 }
 
-// Log the response to console
-function handleData(data) {
-    console.log(data);
-}
-
 // Log the error to console
 function handleError(error) {
-    alert('Error, check console');
+    const errorMessage = document.createElement("p");
+
+    if (error.errors && error.errors.length > 0) {
+        errorMessage.textContent = "Error: " + error.errors[0].message;
+    } else {
+        errorMessage.textContent = "An unknown error occurred";
+    }
+
+    errorMessage.setAttribute("class", "errorMessage");
+    document.body.appendChild(errorMessage);
     console.error(error);
 }
