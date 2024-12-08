@@ -9,11 +9,19 @@
     <title>APIProjectForAniList</title>
 </head>
 <body>
-    <h1>API Project For AniList</h1>
+    <main>
+        <header>
+            <h1 id="title">API Project For AniList</h1>
+        </header>
 
-    <label for="search-input">Search:</label>
-    <input type="text" id="search-input">
-    <button>Search</button>
+        <section id="search">
+            <label for="search-input">Enter User ID:</label>
+            <input type="text" id="search-input">
+            <button onclick="handleSearch()">Search</button>
+        </section>
+
+        <section id="user"></section>
+    </main>
 
     <script type="module" src="js/script.js"></script>
 </body>
