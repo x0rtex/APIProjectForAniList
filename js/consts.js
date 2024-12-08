@@ -20,8 +20,11 @@ query ($userId: Int!) {
         media {
           id
           title {
+            english
             romaji
+            native
           }
+          averageScore
           description
           coverImage {
             extraLarge
