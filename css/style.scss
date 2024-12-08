@@ -1,5 +1,6 @@
 $page-color: #1d1b27;
 $text-color: #e6e6ff;
+$text-color-dark: #727288;
 $error-color: red;
 $text-shadow-color: rgba(0, 0, 0, 0.5);
 $box-shadow-color: rgba(0, 0, 0, 0.2);
@@ -16,7 +17,7 @@ header {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
-  border-bottom: 2px solid $text-color;
+  border-bottom: 2px solid $text-color-dark;
   border-radius: 10px;
   box-shadow: 0 2px 4px $box-shadow-color;
 }
@@ -25,6 +26,12 @@ header {
   margin: 1rem;
   display: inline-block;
   text-shadow: 2px 2px 4px $text-shadow-color;
+}
+
+#note {
+  font-style: italic;
+  font-size: 12px;
+  color: $text-color-dark;
 }
 
 // Search button styles
@@ -61,12 +68,78 @@ button {
 
 // User and list styles
 
+#user {
+  margin: 0 1em 0 1em;
+}
+
 .userName {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 1rem;
   padding: 10px;
   display: inline-block;
-  border: 2px solid $text-color;
+  border: 2px solid $text-color-dark;
   border-radius: 10px;
+}
+
+.list {
+  max-height: 128em;
+  overflow: auto;
+  border: 2px solid $text-color-dark;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 10px 4em;
+}
+
+.listTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+// Media styles
+
+.media {
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+
+.mediaImage {
+  width: 8em;
+  float: left;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px $box-shadow-color;
+  padding: 2px;
+  border: 2px solid $text-color-dark;
+}
+
+.mediaTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.score {
+  background-color: #333;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mediaTags {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.divider {
+  border-top: 2px solid $text-color-dark;
+}
+
+.mediaDescription {
+  min-height: 6em;
 }
