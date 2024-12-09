@@ -23,18 +23,21 @@ export function displayData(jsonData) {
 function createListItem(list) {
     const listItem = document.createElement("li");
     listItem.setAttribute("class", "list");
-    listItem.innerHTML = `<h2 class="list-title">${list.name} (${list.entries.length})</h2>`;
+    const title = document.createElement("h2");
+    title.setAttribute("class", "listTitle");
+    title.textContent = `${list.name} (${list.entries.length})`;
+    listItem.appendChild(title);
     return listItem;
 }
 
 function createMediaElement(media) {
     return `
     <article class="media">
-      <img class="media-image" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
-      <h3 class="media-title">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
-      <h4 class="media-tags">${formatMediaTags(media)}</h4>
+      <img class="mediaImage" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
+      <h3 class="mediaTitle">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
+      <h4 class="mediaTags">${formatMediaTags(media)}</h4>
       <hr class="divider" />
-      <p class="media-description">${media.media.description}</p>
+      <p class="mediaDescription">${media.media.description}</p>
     </article>
   `;
 }
