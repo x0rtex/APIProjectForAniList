@@ -1,25 +1,14 @@
 import { displayData } from "./displayData.js";
 
-// Make the HTTP API request
+// Make the HTTP API request and display data
 export async function makeRequest(api, options) {
-    try {
-        const response = await fetch(api, options);
-        const data = await handleResponse(response);
-        displayData(data);
-    } catch (error) {
-        handleError(error);
-    }
+    const response = await fetch(api, options);
+    const data = await handleResponse(response);
+    displayData(data);
 }
 
-// Return response as JSON
-function handleResponse(response) {
-    return response.json().then(function (json) {
-        return response.ok ? json : Promise.reject(json);
-    });
-}
-
-// Log the error to console
-function handleError(error) {
+// Display error message to user and log error to console
+export function handleError(error) {
     const errorMessage = document.createElement("p");
 
     if (error.errors && error.errors.length > 0) {
@@ -31,4 +20,12 @@ function handleError(error) {
     errorMessage.setAttribute("class", "errorMessage");
     document.body.appendChild(errorMessage);
     console.error(error);
+}
+
+// Return response as JSON
+function handleResponse(response) {
+    if (!response.ok) {
+        return Promise.reject(response);
+    }
+    return response.json();
 }
