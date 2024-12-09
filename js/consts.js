@@ -32,6 +32,7 @@ query ($userId: Int!) {
           season
           seasonYear
           genres
+          siteUrl
         }
       }
     }

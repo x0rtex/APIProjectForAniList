@@ -32,13 +32,15 @@ function createListItem(list) {
 
 function createMediaElement(media) {
     return `
-    <article class="media">
-      <img class="media-image" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
-      <h3 class="media-title">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
-      <h4 class="media-tags">${formatMediaTags(media)}</h4>
-      <hr class="divider" />
-      <p class="media-description">${media.media.description}</p>
-    </article>
+    <a href="${media.media.siteUrl}" target="_blank">
+      <article class="media">
+        <img class="media-image" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
+        <h3 class="media-title">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
+        <h4 class="media-tags">${formatMediaTags(media)}</h4>
+        <hr class="divider" />
+        <p class="media-description">${media.media.description}</p>
+      </article>
+    </a>
   `;
 }
 
