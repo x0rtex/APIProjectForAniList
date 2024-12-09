@@ -32,7 +32,7 @@ function createListItem(list) {
 
 function createMediaElement(media) {
     return `
-    <a href="${media.media.siteUrl}" target="_blank">
+    <a href="${media.media.siteUrl}" style="text-decoration:none;" target="_blank">
       <article class="media">
         <img class="media-image" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
         <h3 class="media-title">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
