@@ -4,19 +4,20 @@ import { displayData } from "./displayData.js";
 export async function makeRequest(api, options) {
     try {
         const response = await fetch(api, options);
-        const data = await handleResponse(response);
-        displayData(data);
+        if (!response.ok) {
+            const error = await response.json();
+            handleError(error);
+        } else {
+            const data = await handleResponse(response);
+            displayData(data);
+        }
     } catch (error) {
         handleError(error);
     }
 }
 
 // Return response as JSON
-function handleResponse(response) {
-    return response.json().then(function (json) {
-        return response.ok ? json : Promise.reject(json);
-    });
-}
+const handleResponse = (response) => response.json();
 
 // Log the error to console
 function handleError(error) {
