@@ -1,3 +1,4 @@
+// Variables
 $page-color: #1d1b27;
 $text-color: #e6e6ff;
 $text-color-dark: #727288;
@@ -5,16 +6,24 @@ $error-color: red;
 $text-shadow-color: rgba(0, 0, 0, 0.5);
 $box-shadow-color: rgba(0, 0, 0, 0.2);
 
+// Font sizes
+$font-size-s: 12px;
+$font-size-m: 16px;
+$font-size-l: 20px;
+$font-size-xl: 32px;
+
+// Global styles
 * {
   background-color: $page-color;
   color: $text-color;
   font-family: "Arial", sans-serif;
 }
 
+// Header styles
 header {
   text-align: center;
   margin: 0 0 1rem 0;
-  font-size: 2rem;
+  font-size: $font-size-xl;
   font-weight: bold;
   letter-spacing: 2px;
   border-bottom: 2px solid $text-color-dark;
@@ -30,12 +39,11 @@ header {
 
 #note {
   font-style: italic;
-  font-size: 12px;
+  font-size: $font-size-s;
   color: $text-color-dark;
 }
 
-// Search button styles
-
+// Input and search button styles
 label {
   display: inline-block;
   margin-right: 10px;
@@ -61,19 +69,18 @@ button {
   margin-left: 10px;
 }
 
-.errorMessage {
+.error-message {
   color: $error-color;
   font-weight: bold;
 }
 
 // User and list styles
-
 #user {
   margin: 0 1em 0 1em;
 }
 
-.userName {
-  font-size: 24px;
+.user-name {
+  font-size: $font-size-l;
   font-weight: bold;
   margin-bottom: 1rem;
   padding: 10px;
@@ -91,21 +98,20 @@ button {
   margin: 10px 10px 4em;
 }
 
-.listTitle {
-  font-size: 20px;
+.list-title {
+  font-size: $font-size-m;
   font-weight: bold;
   margin-bottom: 1rem;
   text-decoration: underline;
 }
 
 // Media styles
-
 .media {
   margin-bottom: 1rem;
   padding: 10px;
 }
 
-.mediaImage {
+.media-image {
   width: 8em;
   float: left;
   margin-right: 10px;
@@ -114,8 +120,8 @@ button {
   border: 2px solid $text-color-dark;
 }
 
-.mediaTitle {
-  font-size: 20px;
+.media-title {
+  font-size: $font-size-m;
   font-weight: bold;
   margin: 0 0 0.5rem 0;
 }
@@ -125,12 +131,12 @@ button {
   color: #fff;
   padding: 2px 4px;
   border-radius: 2px;
-  font-size: 12px;
+  font-size: $font-size-s;
   font-weight: bold;
 }
 
-.mediaTags {
-  font-size: 14px;
+.media-tags {
+  font-size: $font-size-m;
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
@@ -140,6 +146,6 @@ button {
   border-top: 2px solid $text-color-dark;
 }
 
-.mediaDescription {
+.media-description {
   min-height: 6em;
 }

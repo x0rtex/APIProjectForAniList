@@ -7,7 +7,7 @@
 header {
   text-align: center;
   margin: 0 0 1rem 0;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: bold;
   letter-spacing: 2px;
   border-bottom: 2px solid #727288;
@@ -52,7 +52,7 @@ button {
   margin-left: 10px;
 }
 
-.errorMessage {
+.error-message {
   color: red;
   font-weight: bold;
 }
@@ -61,8 +61,8 @@ button {
   margin: 0 1em 0 1em;
 }
 
-.userName {
-  font-size: 24px;
+.user-name {
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 1rem;
   padding: 10px;
@@ -80,8 +80,8 @@ button {
   margin: 10px 10px 4em;
 }
 
-.listTitle {
-  font-size: 20px;
+.list-title {
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 1rem;
   text-decoration: underline;
@@ -92,7 +92,7 @@ button {
   padding: 10px;
 }
 
-.mediaImage {
+.media-image {
   width: 8em;
   float: left;
   margin-right: 10px;
@@ -101,8 +101,8 @@ button {
   border: 2px solid #727288;
 }
 
-.mediaTitle {
-  font-size: 20px;
+.media-title {
+  font-size: 16px;
   font-weight: bold;
   margin: 0 0 0.5rem 0;
 }
@@ -116,8 +116,8 @@ button {
   font-weight: bold;
 }
 
-.mediaTags {
-  font-size: 14px;
+.media-tags {
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
@@ -127,7 +127,7 @@ button {
   border-top: 2px solid #727288;
 }
 
-.mediaDescription {
+.media-description {
   min-height: 6em;
 }
 
