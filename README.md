@@ -11,7 +11,7 @@ A web application that uses the AniList API to fetch and display user data.
 ## Instructions
 
 1. Clone the repository
-2. Open `index.html` in your web browser
+2. Run `index.html` with a live server
 3. Enter a valid AniList user ID in search bar
 4. Click "Search"
 
