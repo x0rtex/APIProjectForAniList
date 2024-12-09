@@ -3,11 +3,12 @@ export const API_ENDPOINT = 'https://graphql.anilist.co';
 
 // Define user IDs to query
 export const USER_IDS = {
-    userId: 7056318  // Example User ID
+    userId: 7056318
 };
 
 // Define GraphQL query
-export const QUERY_USER = gql(`
+export const QUERY_USER = `
+query ($userId: Int!) {
   MediaListCollection(type: ANIME, userId: $userId) {
     user {
       name
@@ -35,7 +36,8 @@ export const QUERY_USER = gql(`
       }
     }
   }
-`);
+}
+`;
 
 // Define config for API request
 export const OPTIONS = {
@@ -50,12 +52,3 @@ export const OPTIONS = {
         variables: USER_IDS
     })
 };
-
-// GraphQL Template Function
-function gql(query) {
-    return `
-    query {
-      ${query}
-    }
-  `;
-}
