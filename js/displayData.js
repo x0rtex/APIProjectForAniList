@@ -9,7 +9,7 @@ export function displayData(jsonData) {
     element.innerHTML = '';
 
     const userName = document.createElement("h2");
-    userName.setAttribute("class", "userName");
+    userName.setAttribute("class", "user-name");
     userName.textContent = user.name;
     element.appendChild(userName);
 
@@ -24,7 +24,7 @@ function createListItem(list) {
     const listItem = document.createElement("li");
     listItem.setAttribute("class", "list");
     const title = document.createElement("h2");
-    title.setAttribute("class", "listTitle");
+    title.setAttribute("class", "list-title");
     title.textContent = `${list.name} (${list.entries.length})`;
     listItem.appendChild(title);
     return listItem;
@@ -33,11 +33,11 @@ function createListItem(list) {
 function createMediaElement(media) {
     return `
     <article class="media">
-      <img class="mediaImage" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
-      <h3 class="mediaTitle">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
-      <h4 class="mediaTags">${formatMediaTags(media)}</h4>
+      <img class="media-image" src="${media.media.coverImage.extraLarge}" alt="Cover Image">
+      <h3 class="media-title">${media.media.title.english || media.media.title.romaji || media.media.title.native} <span class="score">${media.media.averageScore}%</span></h3>
+      <h4 class="media-tags">${formatMediaTags(media)}</h4>
       <hr class="divider" />
-      <p class="mediaDescription">${media.media.description}</p>
+      <p class="media-description">${media.media.description}</p>
     </article>
   `;
 }

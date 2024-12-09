@@ -1,4 +1,4 @@
-import { makeRequest, handleError } from "./requestData.js";
+import { makeRequest } from "./requestData.js";
 import { API_ENDPOINT, OPTIONS, QUERY_USER, USER_IDS } from './consts.js';
 
 // Get user ID from search input and make API request
@@ -12,7 +12,7 @@ async function searchUser() {
         variables: USER_IDS
     });
 
-    await makeRequest(API_ENDPOINT, OPTIONS).catch(handleError);
+    await makeRequest(API_ENDPOINT, OPTIONS);
 }
 
 window.handleSearch = async function() {
