@@ -1,4 +1,4 @@
-# AniList API Project
+# API Project For AniList
 
 A web application that uses the AniList API to fetch and display user data.
 
